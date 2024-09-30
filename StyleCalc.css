@@ -1,1 +1,49 @@
-@charset "UTF-8";
+input
+{
+	display: inline-block;
+	width: 203px;
+	text-align:right;
+	background-color: black;
+	color: white;
+}
+
+button
+{
+	display: inline-block;
+	width: 50px;
+	color: black;
+	text-align:center;
+}
+
+button[name="symbol"]
+{
+	background-color: lightgray;
+}
+
+button[name="numbers"]
+{
+	background-color: darkgray;
+}
+
+button[id="btn0"]
+{
+	width: 104px;
+}
+
+button[id="btnequal"]
+{
+	width: 211px;
+	background-color: skyblue;
+}
+
+button[id="btnclear"]
+{
+	background-color: skyblue;
+}
+
+p
+{
+	margin-left: 40%;
+	zoom: 150%;
+}
+
