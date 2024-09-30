@@ -102,78 +102,59 @@ function Num9()
 
 function numOutput()
 {
-	document.getElementById("txtnum1").disabled = false;
 	document.getElementById("txtnum1").value += inputnum;
-	document.getElementById("txtnum1").disabled = true;
+}
+
+function setval()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	lastnum = 0
+	lastnum = parseFloat(lastnum) + parseFloat(valuenum);
 }
 
 function Result()
 {
 	if(operation == "add")
 	{
-		valuenum = document.getElementById("txtnum1").value;
-		lastnum = 0
-		lastnum = parseFloat(lastnum) + parseFloat(valuenum);
+		setval()
 		sum = parseFloat(firstnum) + parseFloat(lastnum);
-		document.getElementById("txtnum1").disabled = false;
 		document.getElementById("txtnum1").value = sum;
-		document.getElementById("txtnum1").disabled = true;
 	}
 	
 	if(operation == "sub")
 	{
-		valuenum = document.getElementById("txtnum1").value;
-		lastnum = 0
-		lastnum = parseFloat(lastnum) + parseFloat(valuenum);
+		setval()
 		diff = parseFloat(firstnum) - parseFloat(lastnum);
-		document.getElementById("txtnum1").disabled = false;
 		document.getElementById("txtnum1").value = diff;
-		document.getElementById("txtnum1").disabled = true;
 	}
 	
 	if(operation == "Multi")
 	{
-		valuenum = document.getElementById("txtnum1").value;
-		lastnum = 0
-		lastnum = parseFloat(lastnum) + parseFloat(valuenum);
+		setval()
 		product = parseFloat(firstnum) * parseFloat(lastnum);
-		document.getElementById("txtnum1").disabled = false;
 		document.getElementById("txtnum1").value = product;
-		document.getElementById("txtnum1").disabled = true;
 	}
 	
 	if(operation == "Div")
 	{
-		valuenum = document.getElementById("txtnum1").value;
-		lastnum = 0
-		lastnum = parseFloat(lastnum) + parseFloat(valuenum);
+		setval()
 		quotient = parseFloat(firstnum) / parseFloat(lastnum);
-		document.getElementById("txtnum1").disabled = false;
 		document.getElementById("txtnum1").value = quotient;
-		document.getElementById("txtnum1").disabled = true;
 	}
 	
 	if(operation == "power")
 	{
-		valuenum = document.getElementById("txtnum1").value;
-		lastnum = 0
-		lastnum = parseFloat(lastnum) + parseFloat(valuenum);
+		setval()
 		exponent = parseFloat(firstnum) ** parseFloat(lastnum);
-		document.getElementById("txtnum1").disabled = false;
 		document.getElementById("txtnum1").value = exponent;
-		document.getElementById("txtnum1").disabled = true;
 	}
 	
 	if(operation == "ExP")
 	{
-		valuenum = document.getElementById("txtnum1").value;
-		lastnum = 0
-		lastnum = parseFloat(lastnum) + parseFloat(valuenum);
+		setval()
 		Powerof = 10 ** parseFloat(lastnum);
 		EXPresult = parseFloat(firstnum) * parseFloat(Powerof);
-		document.getElementById("txtnum1").disabled = false;
 		document.getElementById("txtnum1").value = EXPresult;
-		document.getElementById("txtnum1").disabled = true;
 	}
 	
 }
@@ -193,27 +174,21 @@ function Percent()
 {
 	valuenum = document.getElementById("txtnum1").value;
 	firstnum = parseFloat(valuenum) / 100;
-	document.getElementById("txtnum1").disabled = false;
 	document.getElementById("txtnum1").value = firstnum;
-	document.getElementById("txtnum1").disabled = true;
 }
 
 function squaring()
 {
 	valuenum = document.getElementById("txtnum1").value;
 	firstnum = parseFloat(valuenum) ** 2;
-	document.getElementById("txtnum1").disabled = false;
 	document.getElementById("txtnum1").value = firstnum;
-	document.getElementById("txtnum1").disabled = true;
 }
 
 function inverse()
 {
 	valuenum = document.getElementById("txtnum1").value;
 	firstnum = parseFloat(valuenum) * -1;
-	document.getElementById("txtnum1").disabled = false;
 	document.getElementById("txtnum1").value = firstnum;
-	document.getElementById("txtnum1").disabled = true;
 }
 
 function Exp()
