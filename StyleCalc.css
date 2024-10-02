@@ -1,7 +1,7 @@
 input
 {
 	display: inline-block;
-	width: 203px;
+	width: 313px;
 	text-align:right;
 	background-color: black;
 	color: white;
@@ -25,14 +25,13 @@ button[name="numbers"]
 	background-color: darkgray;
 }
 
-button[id="btn0"]
+button[id="btn0"], button[id="btnrad"], button[id="btndeg"]
 {
 	width: 104px;
 }
 
 button[id="btnequal"]
 {
-	width: 211px;
 	background-color: skyblue;
 }
 
@@ -41,9 +40,14 @@ button[id="btnclear"]
 	background-color: skyblue;
 }
 
+button[id="btngle"]
+{
+	background-color: lightcyan;
+}
+
 p
 {
-	margin-left: 40%;
+	margin-left: 35%;
 	zoom: 150%;
 }
 

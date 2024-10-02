@@ -1,5 +1,5 @@
 window.addEventListener("load",addListener);
-var firstnum, lastnum, newinput = false, operation = "";
+var firstnum, lastnum, valuenum, newinput = false, operation = "";
 function addListener()
 {
 	document.getElementById("txtnum1").disabled = true;
@@ -25,6 +25,16 @@ function addListener()
 	document.getElementById("btnpower").addEventListener("click",Exponent);
 	document.getElementById("btnsquare").addEventListener("click",squaring);
 	document.getElementById("btnpercent").addEventListener("click",Percent);
+	document.getElementById("btnlog").addEventListener("click",logorithm);
+	document.getElementById("btnln").addEventListener("click",natlog);
+	document.getElementById("btnsin").addEventListener("click",Sine);
+	document.getElementById("btncos").addEventListener("click",Cosine);
+	document.getElementById("btntan").addEventListener("click",Tangent);
+	document.getElementById("btnroot").addEventListener("click",Sqroot);
+	document.getElementById("btngle").addEventListener("click",Inequality);
+	document.getElementById("btnfactorial").addEventListener("click", Factorial);
+	document.getElementById("btnrad").addEventListener("click", Radical);
+	document.getElementById("btndeg").addEventListener("click", Degree);
 	document.getElementById("btnequal").addEventListener("click",Result);
 }
 
@@ -36,7 +46,7 @@ function Deci()
 
 function pi()
 {
-	inputnum = 355/113
+	inputnum = Math.PI
 	numOutput()
 }
 
@@ -157,6 +167,29 @@ function Result()
 		document.getElementById("txtnum1").value = EXPresult;
 	}
 	
+	if(operation == "inequality")
+	{
+		setval()
+		if(firstnum != lastnum)
+		{
+			if(firstnum < lastnum)
+			{
+			document.getElementById("txtnum1").value = firstnum + " < " + lastnum;
+			}
+		
+			if(firstnum > lastnum)
+			{
+			document.getElementById("txtnum1").value = firstnum + " > " + lastnum;
+			}
+		
+		}
+		else
+		{
+			document.getElementById("txtnum1").value = firstnum + " = " + lastnum;
+		}
+		
+	}
+	
 }
 
 function checkNewinput()
@@ -168,6 +201,41 @@ function checkNewinput()
 		firstnum = parseFloat(firstnum) + parseFloat(valuenum);
 		Clear()
 	}
+}
+
+function logorithm()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	firstnum = Math.log10(valuenum);
+	document.getElementById("txtnum1").value = firstnum;
+}
+
+function natlog()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	firstnum = Math.log(valuenum);
+	document.getElementById("txtnum1").value = firstnum;
+}
+
+function Sine()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	firstnum = Math.sin(valuenum);
+	document.getElementById("txtnum1").value = firstnum;
+}
+
+function Cosine()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	firstnum = Math.cos(valuenum);
+	document.getElementById("txtnum1").value = firstnum;
+}
+
+function Tangent()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	firstnum = Math.tan(valuenum);
+	document.getElementById("txtnum1").value = firstnum;
 }
 
 function Percent()
@@ -184,11 +252,52 @@ function squaring()
 	document.getElementById("txtnum1").value = firstnum;
 }
 
+function Sqroot()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	firstnum = Math.sqrt(valuenum);
+	document.getElementById("txtnum1").value = firstnum;
+}
+
 function inverse()
 {
 	valuenum = document.getElementById("txtnum1").value;
 	firstnum = parseFloat(valuenum) * -1;
 	document.getElementById("txtnum1").value = firstnum;
+}
+
+function Radical()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	radi = Math.PI / 180
+	firstnum = parseFloat(valuenum) * radi;
+	document.getElementById("txtnum1").value = firstnum;
+}
+
+function Degree()
+{
+	valuenum = document.getElementById("txtnum1").value;
+	Degr = 180 / Math.PI
+	firstnum = parseFloat(valuenum) * Degr;
+	document.getElementById("txtnum1").value = firstnum;
+}
+
+function Factorial()
+{
+	valuenum = document.getElementById("txtnum1").value;
+    rval= 1;
+    for (i = 1; i <= valuenum; i++)
+        rval = rval * i;
+    document.getElementById("txtnum1").value = rval;
+}
+
+
+
+function Inequality()
+{
+	newinput = true;
+	operation = "inequality";
+	checkNewinput()
 }
 
 function Exp()
