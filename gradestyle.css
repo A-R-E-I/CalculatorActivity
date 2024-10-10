@@ -1,0 +1,19 @@
+body 
+{
+	color:black;
+	background-color:#b2b8cf; 
+ 	font-family:Cambria;
+}
+h1
+{
+	font-family:Cambria; 
+ 	text-align: center; 
+  	color:black;
+}
+label
+{
+	width: 105px;
+	text-align: center;  
+ 	font-family:Cambria;
+ 	background-color: #edeff5;
+}
